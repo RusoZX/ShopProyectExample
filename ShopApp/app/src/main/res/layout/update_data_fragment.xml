@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/updateDataTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/chngTv"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameChngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:text="@string/nameChng"
+        app:layout_constraintStart_toStartOf="@+id/surnameChngTv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/surnameChngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/surnameChng"
+        app:layout_constraintStart_toStartOf="@+id/mailChngTv"
+        app:layout_constraintTop_toBottomOf="@+id/nameChngTv" />
+
+    <TextView
+        android:id="@+id/mailChngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/mailChng"
+        app:layout_constraintStart_toStartOf="@+id/phoneChngTv"
+        app:layout_constraintTop_toBottomOf="@+id/surnameChngTv" />
+
+    <TextView
+        android:id="@+id/phoneChngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/phoneChng"
+        app:layout_constraintStart_toStartOf="@+id/addressChngTv"
+        app:layout_constraintTop_toBottomOf="@+id/mailChngTv" />
+
+    <TextView
+        android:id="@+id/addressChngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/addressChng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneChngTv" />
+
+    <Button
+        android:id="@+id/changeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/chngBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipChngTv" />
+
+    <EditText
+        android:id="@+id/nameChngEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/nameChngTv"
+        app:layout_constraintStart_toEndOf="@+id/nameChngTv"
+        app:layout_constraintTop_toTopOf="@+id/nameChngTv" />
+
+    <EditText
+        android:id="@+id/surnameChngEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/surnameChngTv"
+        app:layout_constraintStart_toStartOf="@+id/nameChngEt"
+        app:layout_constraintTop_toTopOf="@+id/surnameChngTv" />
+
+    <EditText
+        android:id="@+id/mailChngEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/mailChngTv"
+        app:layout_constraintStart_toStartOf="@+id/surnameChngEt"
+        app:layout_constraintTop_toTopOf="@+id/mailChngTv" />
+
+    <EditText
+        android:id="@+id/phoneChngEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneChngTv"
+        app:layout_constraintStart_toStartOf="@+id/mailChngEt"
+        app:layout_constraintTop_toTopOf="@+id/phoneChngTv" />
+
+    <EditText
+        android:id="@+id/addressChngEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/addressChngTv"
+        app:layout_constraintStart_toStartOf="@+id/phoneChngEt"
+        app:layout_constraintTop_toTopOf="@+id/addressChngTv" />
+
+    <TextView
+        android:id="@+id/tipChngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/chngTip"
+        android:textColor="#FFC107"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressChngEt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

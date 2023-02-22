@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addP"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/addProdTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/titleAddProd"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameAddProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:text="@string/nameChng"
+        app:layout_constraintStart_toStartOf="@+id/priceAddProdTv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/priceAddProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/priceAddProd"
+        app:layout_constraintStart_toStartOf="@+id/unitsAddProdTv"
+        app:layout_constraintTop_toBottomOf="@+id/nameAddProdTv" />
+
+    <TextView
+        android:id="@+id/unitsAddProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/unitsAddProd"
+        app:layout_constraintStart_toStartOf="@+id/saleAddProdTv"
+        app:layout_constraintTop_toBottomOf="@+id/priceAddProdTv" />
+
+    <TextView
+        android:id="@+id/saleAddProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/saleAddProd"
+        app:layout_constraintStart_toStartOf="@+id/categoryAddProdTv"
+        app:layout_constraintTop_toBottomOf="@+id/unitsAddProdTv" />
+
+    <TextView
+        android:id="@+id/categoryAddProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/categoryAddProd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saleAddProdTv" />
+
+    <EditText
+        android:id="@+id/nameAddProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/nameAddProdTv"
+        app:layout_constraintStart_toEndOf="@+id/nameAddProdTv"
+        app:layout_constraintTop_toTopOf="@+id/nameAddProdTv" />
+
+    <EditText
+        android:id="@+id/priceAddProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/priceAddProdTv"
+        app:layout_constraintStart_toStartOf="@+id/nameAddProdEt"
+        app:layout_constraintTop_toTopOf="@+id/priceAddProdTv" />
+
+    <EditText
+        android:id="@+id/unitsAddProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/unitsAddProdTv"
+        app:layout_constraintStart_toStartOf="@+id/priceAddProdEt"
+        app:layout_constraintTop_toTopOf="@+id/unitsAddProdTv" />
+
+    <EditText
+        android:id="@+id/saleAddProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/saleAddProdTv"
+        app:layout_constraintStart_toStartOf="@+id/unitsAddProdEt"
+        app:layout_constraintTop_toTopOf="@+id/saleAddProdTv" />
+
+    <Spinner
+        android:id="@+id/addProdSpinner"
+        android:layout_width="210dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="@+id/categoryAddProdTv"
+        app:layout_constraintStart_toStartOf="@+id/saleAddProdEt"
+        app:layout_constraintTop_toTopOf="@+id/categoryAddProdTv" />
+
+    <EditText
+        android:id="@+id/categoryAddProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/addProdSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/addProdSpinner" />
+
+    <Button
+        android:id="@+id/addProdBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addProdBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="595dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

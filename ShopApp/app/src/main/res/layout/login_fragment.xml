@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/userTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:text="@string/userEt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pwdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/pwdEt"
+        app:layout_constraintEnd_toEndOf="@+id/userEt"
+        app:layout_constraintStart_toStartOf="@+id/userEt"
+        app:layout_constraintTop_toBottomOf="@+id/userEt" />
+
+    <EditText
+        android:id="@+id/userEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/pwdTv"
+        app:layout_constraintEnd_toEndOf="@+id/userTv"
+        app:layout_constraintStart_toStartOf="@+id/userTv"
+        app:layout_constraintTop_toBottomOf="@+id/userTv" />
+
+    <EditText
+        android:id="@+id/pwdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/pwdTv"
+        app:layout_constraintStart_toStartOf="@+id/pwdTv"
+        app:layout_constraintTop_toBottomOf="@+id/pwdTv" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/loginBtn"
+        app:layout_constraintEnd_toEndOf="@+id/pwdEt"
+        app:layout_constraintStart_toStartOf="@+id/pwdEt"
+        app:layout_constraintTop_toBottomOf="@+id/pwdEt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewEditRiego"
+    android:layout_width="200dp"
+    android:layout_height="250dp"
+    app:cardBackgroundColor="#FFE57F">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/productShpCardIV"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tv" />
+
+        <TextView
+            android:id="@+id/productNameShpCardTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blankInsert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productShpCardIV" />
+
+        <TextView
+            android:id="@+id/priceProductShpCardTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priceInsert"
+            app:layout_constraintBottom_toBottomOf="@+id/saleProductShpCardTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/saleProductShpCardTV"
+            app:layout_constraintTop_toTopOf="@+id/saleProductShpCardTV" />
+
+        <TextView
+            android:id="@+id/saleProductShpCardTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/saleInsert"
+            app:layout_constraintEnd_toStartOf="@+id/priceProductShpCardTV"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productShpCardIV" />
+
+        <ImageView
+            android:id="@+id/likeProductShpCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fav_empty" />
+
+        <TextView
+            android:id="@+id/quantityProductShpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantityShp"
+            app:layout_constraintBottom_toBottomOf="@+id/finalPriceProductShpTv"
+            app:layout_constraintEnd_toStartOf="@+id/finalPriceProductShpTv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/finalPriceProductShpTv" />
+
+        <TextView
+            android:id="@+id/finalPriceProductShpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/finalPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/quantityProductShpTv"
+            app:layout_constraintTop_toBottomOf="@+id/priceProductShpCardTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

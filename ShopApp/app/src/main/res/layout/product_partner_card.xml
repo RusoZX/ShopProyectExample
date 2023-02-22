@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/productPartnerCardView"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    app:cardBackgroundColor="#FFE57F">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/productPartnerCardIV"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tv" />
+
+        <TextView
+            android:id="@+id/productNamePartnerCardTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blankInsert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productPartnerCardIV" />
+
+        <TextView
+            android:id="@+id/priceProductPartnerCardTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priceInsert"
+            app:layout_constraintBottom_toBottomOf="@+id/saleProductPartnerCardTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/saleProductPartnerCardTV"
+            app:layout_constraintTop_toTopOf="@+id/saleProductPartnerCardTV" />
+
+        <TextView
+            android:id="@+id/saleProductPartnerCardTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/saleInsert"
+            app:layout_constraintStart_toStartOf="@+id/unitsSoldPartnerCardTv"
+            app:layout_constraintTop_toBottomOf="@+id/productPartnerCardIV" />
+
+        <ImageView
+            android:id="@+id/likeProductPartnerCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fav_empty" />
+
+        <TextView
+            android:id="@+id/unitsSoldPartnerCardTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/unitsSoldInsert"
+            app:layout_constraintStart_toStartOf="@+id/unitsExistencePartnerCardTv"
+            app:layout_constraintTop_toBottomOf="@+id/priceProductPartnerCardTV" />
+
+        <TextView
+            android:id="@+id/unitsExistencePartnerCardTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/unitsInExistenceInsert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unitsSoldPartnerCardTv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

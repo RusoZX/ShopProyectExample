@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/editProdTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/titleEditProd"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameEditProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="125dp"
+        android:text="@string/nameChng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/priceEditProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/priceAddProd"
+        app:layout_constraintStart_toStartOf="@+id/nameEditProdTv"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditProdTv" />
+
+
+    <TextView
+        android:id="@+id/saleEditProdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/saleAddProd"
+        app:layout_constraintStart_toStartOf="@+id/priceEditProdTv"
+        app:layout_constraintTop_toBottomOf="@+id/priceEditProdTv" />
+
+    <EditText
+        android:id="@+id/nameEditProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/nameEditProdTv"
+        app:layout_constraintStart_toEndOf="@+id/nameEditProdTv"
+        app:layout_constraintTop_toTopOf="@+id/nameEditProdTv" />
+
+    <EditText
+        android:id="@+id/priceEditProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/priceEditProdTv"
+        app:layout_constraintStart_toStartOf="@+id/nameEditProdEt"
+        app:layout_constraintTop_toTopOf="@+id/priceEditProdTv" />
+
+
+    <EditText
+        android:id="@+id/saleEditProdEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/saleEditProdTv"
+        app:layout_constraintStart_toStartOf="@+id/priceEditProdEt"
+        app:layout_constraintTop_toTopOf="@+id/saleEditProdTv" />
+
+    <Button
+        android:id="@+id/editProdBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="@string/chngBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saleAddProdEt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

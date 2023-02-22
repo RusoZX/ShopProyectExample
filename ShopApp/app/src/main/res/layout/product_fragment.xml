@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/productPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:text="@string/priceInsert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productIV" />
+
+    <ImageView
+        android:id="@+id/productIV"
+        android:layout_width="409dp"
+        android:layout_height="256dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tv" />
+
+    <TextView
+        android:id="@+id/productNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/nameInsert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productIV" />
+
+    <TextView
+        android:id="@+id/productCategoryTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/categoryInsert"
+        app:layout_constraintStart_toStartOf="@+id/productNameTV"
+        app:layout_constraintTop_toBottomOf="@+id/productNameTV" />
+
+    <TextView
+        android:id="@+id/productSaleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/saleInsert"
+        app:layout_constraintStart_toStartOf="@+id/productPrice"
+        app:layout_constraintTop_toBottomOf="@+id/productPrice" />
+
+    <TextView
+        android:id="@+id/productUnitsInExistenceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/unitsInExistenceInsert"
+        app:layout_constraintStart_toStartOf="@+id/productCategoryTV"
+        app:layout_constraintTop_toBottomOf="@+id/productCategoryTV" />
+
+    <TextView
+        android:id="@+id/productUnitsSoldTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/unitsSoldInsert"
+        app:layout_constraintStart_toStartOf="@+id/productUnitsInExistenceTV"
+        app:layout_constraintTop_toBottomOf="@+id/productUnitsInExistenceTV" />
+
+    <ImageView
+        android:id="@+id/productLikeIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fav_empty" />
+
+    <Button
+        android:id="@+id/addToCardBtn"
+        android:layout_width="211dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/addToCartBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productSaleTV" />
+</androidx.constraintlayout.widget.ConstraintLayout>

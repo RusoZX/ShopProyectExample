@@ -1,0 +1,775 @@
+syntax ="proto3";
+package generated;
+
+/*
+Here go the definition of the data that the grpc servicies are gonna
+carry
+*/
+
+//////////////////////////////////////////////////LOGIN SERVICE/////////////////////////////////////////////////////////
+ /*
+ 	First we describe the message (the data that the server is gonna receive)
+ */
+
+ message ClientPetitionLogin{
+ 	string user = 1;
+ 	string pwd = 2;
+ }
+
+
+
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or if the password was
+	incorrect and in case that the user nick name and the password were correct its gonna send all the information needed
+*/
+
+ message ServerResponseLogin{
+ 	enum StatusCode {
+ 		OK = 0;
+ 		SERVER_ERROR = 1;
+ 		INCORRECT = 2;
+ 	}
+ 	enum Format{
+ 		PNG = 0;
+ 		JPG = 1;
+	}
+ 	StatusCode status_code = 1;
+ 	int32 id = 2;
+ 	int32 type = 3;
+ 	string name = 4;
+ 	Format format = 5;
+ 	bytes image = 6;
+ }
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service serviceLogin{
+	rpc giveResponseLogin(ClientPetitionLogin) returns 
+	(ServerResponseLogin);
+}
+//////////////////////////////////////////////////PASSWORD CHANGE SERVICE/////////////////////////////////////////////////////////
+/*
+  First we describe the message (the data that the server is gonna receive)
+*/
+
+message ClientPetitionPwdChange{
+	string oldPwd = 1;
+	string newPwd = 2;
+	int32 idUser = 3;
+}
+
+
+
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or if the password was
+	incorrect and in case that the user nick name and the password were correct its gonna send all the information needed
+*/
+
+message ServerResponsePwdChange{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+		INCORRECT = 5;
+	}
+
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service servicePwdChange{
+	rpc giveResponsePwdChange(ClientPetitionPwdChange) returns
+			(ServerResponsePwdChange);
+}
+/////////////////////////////////////////////USER DATA SERVICE//////////////////////////////////////////////////////////
+/*
+  First we describe the message (the data that the server is gonna receive)
+*/
+
+message ClientPetitionUserData{
+	int32 idUser = 1;
+}
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error, in case everything
+	was alright it will send the needed information
+*/
+
+message ServerResponseUserData{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+	int32 id = 2;
+	string name = 3;
+	string surname = 4;
+	string phone = 5;
+	string adress = 6;
+	string imagePath = 7;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service serviceUserData{
+	rpc giveResponseUserData(ClientPetitionUserData) returns
+			(ServerResponseUserData);
+}
+/////////////////////////////////////////////UPDATE USER DATA SERVICE///////////////////////////////////////////////////
+/*
+  First we describe the message (the data that the server is gonna receive)
+*/
+
+message ClientPetitionUpdateUserData{
+	int32 idUser = 1;
+	int32 type = 2;
+	string name = 3;
+	string surName = 4;
+	string phone = 6;
+	string address = 7;
+}
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or the data was updated
+	 successfully
+*/
+
+message ServerResponseUpdateUserData{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service serviceUpdateUserData{
+	rpc giveResponseUpdateUserData(ClientPetitionUpdateUserData) returns
+			(ServerResponseUpdateUserData);
+}
+/////////////////////////////////////////////ADD USER SERVICE///////////////////////////////////////////////////////////
+/*
+  First we describe the message (the data that the server is gonna receive)
+*/
+
+message ClientPetitionAddUser{
+	int32 type = 1;
+	string nick = 2;
+	string name = 3;
+	string surName = 4;
+	string phone = 5;
+	string adress = 6;
+	string imagePath = 7;
+	string pwd = 8;
+}
+
+/*
+	Then we create the server response, which has a Status code so we know if there was an error, the nick name already
+	exist or the user was successfully added
+*/
+
+message ServerResponseAddUser{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+		NICK_NAME_EXIST = 2;
+	}
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service serviceAddUser{
+	rpc giveResponseAddUser(ClientPetitionAddUser) returns
+			(ServerResponseAddUser);
+}
+/////////////////////////////////////////////PRODUCT SERVICE////////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+ message ClientPetitionProduct{
+ 	int32 idProduct = 1;
+
+ }
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or  the product
+	 does not exist, in case it does exist the server send the needed data
+*/
+
+ message ServerResponseProduct{
+ 	enum StatusCode {
+ 		OK = 0;
+ 		SERVER_ERROR = 1;
+ 	}
+	 enum Format{
+		 PNG = 0;
+		 JPG = 1;
+	 }
+ 	StatusCode status_code = 1;
+ 	int32 id = 2;
+ 	int32 owner = 3;
+ 	string name = 4;
+ 	float price = 5;
+ 	int32 unitsInExistence = 6;
+ 	int32 unitsSold = 7;
+ 	int32 sale = 8;
+ 	Format format = 9;
+ 	bytes image = 10;
+ 	string category = 11;
+ }
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server 
+*/
+
+service serviceProduct{
+	rpc giveResponseProduct(ClientPetitionProduct) returns 
+	(ServerResponseProduct);
+}
+/////////////////////////////////////////////PRODUCTS SERVICE////////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+message ClientPetitionProducts{
+	enum StatusCode {
+		NAME_ASC = 0;
+		NAME_DESC = 1;
+		PRICE_ASC = 2;
+		PRICE_DESC = 3;
+		SELLS_ASC = 4;
+		SELLS_DESC = 5;
+		BY_NAME = 6;
+		BY_CATEGORY = 7;
+	}
+	int32 quantity = 1;
+	StatusCode sortingMode = 2;
+	string search = 3;
+	int32 idUser = 4;
+
+}
+/*
+	Now we create an 'Object' so we can send an array of Products
+ */
+
+message Product{
+	enum Format{
+		PNG = 0;
+		JPG = 1;
+	}
+	int32 id = 1;
+	int32 owner =2;
+	string name = 3;
+	float price = 4;
+	int32 unitsInExistence = 5;
+	int32 unitsSold = 6;
+	int32 sale = 7;
+	Format format = 8;
+	bytes image = 9;
+	string category = 10;
+	bool liked = 11;
+}
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error, in case everithing
+	 is okay it will send an array of Products
+*/
+message ServerResponseProducts{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+		EMPTY = 2;
+	}
+	StatusCode status_code = 1;
+	repeated Product products = 2;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response
+	 from the server
+*/
+
+service serviceProducts{
+	rpc giveResponseProducts(ClientPetitionProducts) returns
+			(ServerResponseProducts);
+}
+/////////////////////////////////////////////ADD PRODUCT SERVICE///////////////////////////////////////////////////////////
+/*
+  First we describe the message (the data that the server is gonna receive)
+*/
+
+message ClientPetitionAddProduct{
+	string name = 1;
+	float price = 2;
+	int32 unitsExistence = 3;
+	int32 sale = 4;
+	string imagePath = 5;
+	int32 owner = 6;
+	string category = 7;
+}
+
+/*
+	Then we create the server response, which has a Status code so we know if there was an error, the nick name already
+	exist or the user was successfully added
+*/
+
+message ServerResponseAddProduct{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+		PRODUCT_EXISTS = 3;
+	}
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service serviceAddProduct{
+	rpc giveResponseAddProduct(ClientPetitionAddProduct) returns
+			(ServerResponseAddProduct);
+}
+/////////////////////////////////////////////UPDATE PRODUCT SERVICE///////////////////////////////////////////////////////////
+/*
+  First we describe the message (the data that the server is gonna receive)
+*/
+
+message ClientPetitionUpdateProduct{
+	int32 idProduct = 1;
+	string name = 2;
+	float price = 3;
+	int32 sale = 4;
+}
+
+/*
+	Then we create the server response, which has a Status code so we know if there was an error, the nick name already
+	exist or the user was successfully added
+*/
+
+message ServerResponseUpdateProduct{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service serviceUpdateProduct{
+	rpc giveResponseUpdateProduct(ClientPetitionUpdateProduct) returns
+			(ServerResponseUpdateProduct);
+}
+/////////////////////////////////////////////CATEGORIES SERVICE///////////////////////////////////////////////////////////
+/*
+  First we describe the message (the data that the server is gonna receive)
+*/
+
+message ClientPetitionCategories{
+
+}
+
+/*
+	Then we create the server response, which has a Status code so we know if there was an error, the nick name already
+	exist or the user was successfully added
+*/
+
+message ServerResponseCategories{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+	repeated string categories = 2;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a
+	 response from the server
+*/
+
+service serviceCategories{
+	rpc giveResponseCategories(ClientPetitionCategories) returns
+			(ServerResponseCategories);
+}
+////////////////////////////////////////////SALES SERVICE///////////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the petition
+ */
+
+ message ClientPetitionSales{
+ 	int32 idUser = 1;
+ 	int32 idProduct = 2;
+ 	int32 quantity = 3;
+ 	string firstDay = 4;
+ 	string lastDay = 5;
+ }
+/* 
+	Now we create a message that its gonna be a kind of like an object so we can send an array
+	*/
+
+message Sale{
+	int32 idBuyer = 1;
+	int32 idProduct = 2;
+	int32 quantity = 3;
+	string date = 4;
+	string name = 5;
+	string imagePath = 6;
+}
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or
+	the product does not exist, in case it does exist the server send the needed data
+ */
+
+
+ message ServerResponseSales{
+ 	enum StatusCode {
+ 		OK = 0;
+ 		SERVER_ERROR = 1;
+		EMPTY = 2;
+ 	}
+ 	StatusCode status_code = 1;
+	repeated Sale sales = 2;
+ }
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server 
+*/
+
+service serviceSales{
+	rpc giveResponseSales(ClientPetitionSales) returns
+	(ServerResponseSales);
+}
+/////////////////////////////////////////////MAKE SALE SERVICE//////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+message ClientPetitionMakeSale{
+	int32 idBuyer = 1;
+	int32 idProduct = 2;
+	string date = 3;
+	int32 quantity = 4;
+}
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or the
+	sale was successfully made
+*/
+
+message ServerResponseMakeSale{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceMakeSale{
+	rpc giveResponseMakeSale(ClientPetitionMakeSale) returns
+			(ServerResponseMakeSale);
+}
+////////////////////////////////////////////RESTOCKS SERVICE///////////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the petition
+ */
+
+message ClientPetitionRestocks{
+	int32 idUser = 1;
+	int32 idProduct = 2;
+	int32 quantity = 3;
+	string firstDay = 4;
+	string lastDay = 5;
+}
+/*
+	Now we create a message that its gonna be a kind of like an object so we can send an array
+	*/
+
+message Restock{
+	int32 idOwner = 1;
+	int32 idProduct = 2;
+	int32 quantity = 3;
+	string date = 4;
+	string name = 5;
+	string imagePath = 6;
+}
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or
+	the product does not exist, in case it does exist the server send the needed data
+ */
+
+
+message ServerResponseRestocks{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+		EMPTY = 3;
+	}
+	StatusCode status_code = 1;
+	repeated Restock restocks = 2;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceRestocks{
+	rpc giveResponseRestocks(ClientPetitionRestocks) returns
+			(ServerResponseRestocks);
+}
+/////////////////////////////////////////////MAKE RESTOCK SERVICE//////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+message ClientPetitionMakeRestock{
+	int32 idOwner = 1;
+	int32 idProduct = 2;
+	int32 quantity = 3;
+	string date = 4;
+
+}
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or the
+	sale was successfully made
+*/
+
+message ServerResponseMakeRestock{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceMakeRestock{
+	rpc giveResponseMakeRestock(ClientPetitionMakeRestock) returns
+			(ServerResponseMakeRestock);
+}
+/////////////////////////////////////////////LIKE SERVICE//////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+message ClientPetitionLike{
+	int32 idUser = 1;
+	int32 idProduct = 2;
+	string date = 3;
+	enum StatusCode {
+		LIKE = 0;
+		DISLIKE = 1;
+	}
+	StatusCode status_code = 4;
+
+}
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or the
+	sale was successfully made
+*/
+
+message ServerResponseLike{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceLike{
+	rpc giveResponseLike(ClientPetitionLike) returns
+			(ServerResponseLike);
+}
+/////////////////////////////////////////////IS LIKED SERVICE//////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+message ClientPetitionIsLiked{
+	int32 idUser = 1;
+	int32 idProduct = 2;
+}
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or the
+	sale was successfully made
+*/
+
+message ServerResponseIsLiked{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+	bool isLiked = 2;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceIsLiked{
+	rpc giveResponseIsLiked(ClientPetitionIsLiked) returns
+			(ServerResponseIsLiked);
+}
+/////////////////////////////////////////////LIKES LIST SERVICE//////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+message ClientPetitionLikesList{
+	int32 idUser=1;
+}
+
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or the
+	sale was successfully made
+*/
+
+message ServerResponseLikesList{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+	repeated Product products = 2;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceLikesList{
+	rpc giveResponseLikesList(ClientPetitionLikesList) returns
+			(ServerResponseLikesList);
+}
+/////////////////////////////////////////////ADD TO SHOPPING LIST SERVICE//////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the message (the data that is gonna be sent)
+ */
+
+message ClientPetitionAddShoppingList{
+	int32 idUser = 1;
+	int32 idProduct = 2;
+	int32 quantity = 3;
+}
+
+/*
+	Then we create the server response, which has a Status code so we know if there was an error or the
+	sale was successfully made
+*/
+
+message ServerResponseAddShoppingList{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+	}
+	StatusCode status_code = 1;
+}
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceAddShoppingList{
+	rpc giveResponseAddShoppingList(ClientPetitionAddShoppingList) returns
+			(ServerResponseAddShoppingList);
+}
+////////////////////////////////////////////SHOPPING LIST SERVICE///////////////////////////////////////////////////////////////
+
+/*
+ 	First we describe the petition
+ */
+
+message ClientPetitionShoppingList{
+	int32 idUser = 1;
+}
+
+message ProductShoppingList{
+	enum Format{
+		PNG = 0;
+		JPG = 1;
+	}
+	int32 id = 1;
+	int32 owner =2;
+	string name = 3;
+	float price = 4;
+	int32 unitsInExistence = 5;
+	int32 unitsSold = 6;
+	int32 sale = 7;
+	Format format = 8;
+	bytes image = 9;
+	string category = 10;
+	bool liked = 11;
+	int32 quantity = 12;
+}
+/*
+	Then we create the server response, wich has a Status code so we know if there was an error or
+	the product does not exist, in case it does exist the server send the needed data
+ */
+
+
+message ServerResponseShoppingList{
+	enum StatusCode {
+		OK = 0;
+		SERVER_ERROR = 1;
+		EMPTY = 3;
+	}
+	StatusCode status_code = 1;
+	repeated ProductShoppingList products = 2;
+}
+
+/*
+	Then we create the service that is gonna receive a petition from the client and is gonna give a response from the server
+*/
+
+service serviceShoppingList{
+	rpc giveResponseShoppingList(ClientPetitionShoppingList) returns
+			(ServerResponseShoppingList);
+}

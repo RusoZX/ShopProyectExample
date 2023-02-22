@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/m"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/makeRestockTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/titleMakeRestock"
+        android:textAlignment="center"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/makeRestockProductTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="125dp"
+        android:text="@string/nameChng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/makeRestockQuantityTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/quantity"
+        app:layout_constraintStart_toStartOf="@+id/makeRestockProductTv"
+        app:layout_constraintTop_toBottomOf="@+id/makeRestockProductTv" />
+
+    <Spinner
+        android:id="@+id/makeRestockNameSpinner"
+        android:layout_width="208dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/makeRestockProductTv"
+        app:layout_constraintTop_toTopOf="@+id/makeRestockProductTv"
+        tools:layout_editor_absoluteX="121dp" />
+
+    <EditText
+        android:id="@+id/makeRestockQuantityEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/makeRestockQuantityTv"
+        app:layout_constraintStart_toStartOf="@+id/makeRestockNameSpinner"
+        app:layout_constraintTop_toTopOf="@+id/makeRestockQuantityTv" />
+
+    <Button
+        android:id="@+id/makeRestockBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:text="@string/restockBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/makeRestockQuantityEt" />
+</androidx.constraintlayout.widget.ConstraintLayout>

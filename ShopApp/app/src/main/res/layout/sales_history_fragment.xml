@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/saleHistoryTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/titleSales"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/saleHistoryRecyView"
+        android:layout_width="412dp"
+        android:layout_height="588dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saleHistoryTv" />
+
+    <Spinner
+        android:id="@+id/dateSpinnerSale"
+        android:layout_width="125dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/quantitySpinnerSale"
+        android:layout_width="114dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="140dp"
+        app:layout_constraintBottom_toBottomOf="@+id/searchSale"
+        app:layout_constraintStart_toEndOf="@+id/dateSpinnerSale"
+        app:layout_constraintTop_toTopOf="@+id/searchSale" />
+
+    <ImageView
+        android:id="@+id/searchSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dateSpinnerSale"
+        app:layout_constraintEnd_toStartOf="@+id/quantitySpinnerSale"
+        app:layout_constraintStart_toEndOf="@+id/dateSpinnerSale"
+        app:layout_constraintTop_toTopOf="@+id/dateSpinnerSale"
+        app:srcCompat="@drawable/search" />
+</androidx.constraintlayout.widget.ConstraintLayout>
